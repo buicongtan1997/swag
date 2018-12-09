@@ -20,7 +20,7 @@ import (
 	"strconv"
 	"strings"
 
-	"buicongtan1997/swag/swagger"
+	"github.com/buicongtan1997/swag/swagger"
 )
 
 // Builder uses the builder pattern to generate swagger endpoint definitions

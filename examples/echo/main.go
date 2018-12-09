@@ -18,9 +18,9 @@ import (
 	"net/http"
 	"strings"
 
-	"buicongtan1997/swag"
-	"buicongtan1997/swag/endpoint"
-	"buicongtan1997/swag/swagger"
+	"github.com/buicongtan1997/swag"
+	"github.com/buicongtan1997/swag/endpoint"
+	"github.com/buicongtan1997/swag/swagger"
 
 	"github.com/labstack/echo"
 )

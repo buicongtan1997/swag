@@ -18,10 +18,11 @@ import (
 	"io"
 	"net/http"
 
+	"buicongtan1997/swag"
+	"buicongtan1997/swag/endpoint"
+	"buicongtan1997/swag/swagger"
+
 	"github.com/gorilla/mux"
-	"github.com/savaki/swag"
-	"github.com/savaki/swag/endpoint"
-	"github.com/savaki/swag/swagger"
 )
 
 func handle(w http.ResponseWriter, _ *http.Request) {

@@ -53,6 +53,8 @@ type Parameter struct {
 	Required    bool    `json:"required"`
 	Schema      *Schema `json:"schema,omitempty"`
 	Type        string  `json:"type,omitempty"`
+	Default     string  `json:"default,omitempty"`
+	Enum	    []string  `json:"enum,omitempty"`
 	Format      string  `json:"format,omitempty"`
 }
 

@@ -18,10 +18,11 @@ import (
 	"net/http"
 	"strings"
 
+	"buicongtan1997/swag"
+	"buicongtan1997/swag/endpoint"
+	"buicongtan1997/swag/swagger"
+
 	"github.com/labstack/echo"
-	"github.com/savaki/swag"
-	"github.com/savaki/swag/endpoint"
-	"github.com/savaki/swag/swagger"
 )
 
 func handle(c echo.Context) error {

@@ -18,9 +18,9 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/savaki/swag"
-	"github.com/savaki/swag/endpoint"
-	"github.com/savaki/swag/swagger"
+	"buicongtan1997/swag"
+	"buicongtan1997/swag/endpoint"
+	"buicongtan1997/swag/swagger"
 )
 
 func handle(w http.ResponseWriter, req *http.Request) {

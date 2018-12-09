@@ -30,7 +30,7 @@ func inspect(t reflect.Type, jsonTag string) Property {
 	}
 
 	switch p.GoType.Kind() {
-	case reflect.Int, reflect.Int8, reflect.Int16, reflect.Int32, reflect.Uint8, reflect.Uint16, reflect.Uint32:
+	case reflect.Int, reflect.Int8, reflect.Int16, reflect.Int32, reflect.Uint, reflect.Uint16, reflect.Uint32:
 		p.Type = "integer"
 		p.Format = "int32"
 
@@ -76,7 +76,7 @@ func inspect(t reflect.Type, jsonTag string) Property {
 			name := makeName(p.GoType)
 			p.Items.Ref = makeRef(name)
 
-		case reflect.Int, reflect.Int8, reflect.Int16, reflect.Int32, reflect.Uint8, reflect.Uint16, reflect.Uint32:
+		case reflect.Int, reflect.Int8, reflect.Int16, reflect.Int32, reflect.Uint, reflect.Uint16, reflect.Uint32:
 			p.Items.Type = "integer"
 			p.Items.Format = "int32"
 

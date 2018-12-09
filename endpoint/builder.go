@@ -20,7 +20,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/savaki/swag/swagger"
+	"buicongtan1997/swag/swagger"
 )
 
 // Builder uses the builder pattern to generate swagger endpoint definitions
@@ -28,7 +28,7 @@ type Builder struct {
 	Endpoint *swagger.Endpoint
 }
 
-// Option represents a functional option to customize the swagger endpoint
+// Option represents a functiosnal option to customize the swagger endpoint
 type Option func(builder *Builder)
 
 // Apply improves the readability of applied options
@@ -101,13 +101,59 @@ func Path(name, typ, description string, required bool) Option {
 
 // Query defines a query parameter for the endpoint; name, typ, description, and required correspond to the matching
 // swagger fields
-func Query(name, typ, description string, required bool) Option {
+func Query(name, typ, description string, required bool, args ...interface{}) Option {
 	p := swagger.Parameter{
 		Name:        name,
 		In:          "query",
 		Type:        typ,
 		Description: description,
 		Required:    required,
+	}
+	for _, arg := range args {
+		switch arg.(type) {
+		case string:
+			p.Default = arg.(string)
+		case []string:
+			p.Enum = arg.([]string)
+		}
+	}
+	return parameter(p)
+}
+
+func HeaderParams(name, typ, description string, required bool, args ...interface{}) Option {
+	p := swagger.Parameter{
+		Name:        name,
+		In:          "header",
+		Type:        typ,
+		Description: description,
+		Required:    required,
+	}
+	for _, arg := range args {
+		switch arg.(type) {
+		case string:
+			p.Default = arg.(string)
+		case []string:
+			p.Enum = arg.([]string)
+		}
+	}
+	return parameter(p)
+}
+
+func FormData(name, typ, description string, required bool, args ...interface{}) Option {
+	p := swagger.Parameter{
+		Name:        name,
+		In:          "formData",
+		Type:        typ,
+		Description: description,
+		Required:    required,
+	}
+	for _, arg := range args {
+		switch arg.(type) {
+		case string:
+			p.Default = arg.(string)
+		case []string:
+			p.Enum = arg.([]string)
+		}
 	}
 	return parameter(p)
 }

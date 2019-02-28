@@ -13,7 +13,7 @@ No code generation, no framework constraints, just a simple swagger definition.
 ## Installation
 
 ```bash
-go get github.com/savaki/swag
+go get github.com/buicongtan1997/swag
 ```
 
 
